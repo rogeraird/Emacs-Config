@@ -27,12 +27,6 @@
 ;; Key bindings
 (global-set-key (kbd "C-c d") 'insert-date)
 
-
-
-(auto-insert-mode)
-(setq auto-insert-directory "~/.emacs.d/templates/")
-(setq auto-insert-query nil)
-(define-auto-insert "\.c" "c.c")
 (ido-mode t)
 (setq ido-mode-auto-merge-work-directories-length -1)
 (column-number-mode t)
