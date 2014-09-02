@@ -11,7 +11,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("7fa9dc3948765d7cf3d7a289e40039c2c64abf0fad5c616453b263b601532493" "e16a771a13a202ee6e276d06098bc77f008b73bbac4d526f160faa2d76c1dd0e" "ea0c5df0f067d2e3c0f048c1f8795af7b873f5014837feb0a7c8317f34417b04" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+ '(custom-safe-themes (quote ("f0a99f53cbf7b004ba0c1760aa14fd70f2eabafe4e62a2b3cf5cabae8203113b" "7fa9dc3948765d7cf3d7a289e40039c2c64abf0fad5c616453b263b601532493" "e16a771a13a202ee6e276d06098bc77f008b73bbac4d526f160faa2d76c1dd0e" "ea0c5df0f067d2e3c0f048c1f8795af7b873f5014837feb0a7c8317f34417b04" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(inhibit-startup-screen t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -21,21 +21,27 @@
  '(flymake-errline ((((class color)) (:underline "red"))))
  '(flymake-warnline ((((class color)) (:underline "yellow")))))
 
-(scroll-bar-mode -1)
+(scroll-bar-mode -1) ; No scrollbar
 
+; Solarized dark for GUI
+; cyberpunk for CLI
 (if (display-graphic-p)
     (progn
       (load-theme 'solarized-dark))
   (load-theme 'cyberpunk))
 
+(electric-pair-mode) ; Auto close brackets, quotes, etc.
+(setenv "PATH" (shell-command-to-string "echo $PATH"))
+
+
 ;; Key bindings
+(global-set-key (kbd "C-!") 'eshell)
 (global-set-key (kbd "C-c d") 'insert-date)
 (global-set-key (kbd "C-c s") 'sort-lines)
 (global-set-key (kbd "C-c r") 'indent-region)
 
 ;; Add ~/.cabal/bin to exec-path
-(setq exec-path (append exec-path '("/home/roger/.cabal/bin")))
-
+(setq exec-path (append exec-path '("/home/roger/.cabal/bin" "/home/roger/bin")))
 
 
 (ido-mode t)
