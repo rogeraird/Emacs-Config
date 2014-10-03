@@ -24,21 +24,27 @@
  '(flymake-errline ((((class color)) (:underline "red"))))
  '(flymake-warnline ((((class color)) (:underline "yellow")))))
 
-(scroll-bar-mode -1)
+(scroll-bar-mode -1) ; No scrollbar
 
+; Solarized dark for GUI
+; cyberpunk for CLI
 (if (display-graphic-p)
     (progn
       (load-theme 'solarized-dark))
   (load-theme 'cyberpunk))
 
+(electric-pair-mode) ; Auto close brackets, quotes, etc.
+(setenv "PATH" (shell-command-to-string "echo $PATH"))
+
+
 ;; Key bindings
+(global-set-key (kbd "C-!") 'eshell)
 (global-set-key (kbd "C-c d") 'insert-date)
 (global-set-key (kbd "C-c s") 'sort-lines)
 (global-set-key (kbd "C-c r") 'indent-region)
 
 ;; Add ~/.cabal/bin to exec-path
-(setq exec-path (append exec-path '("/home/roger/.cabal/bin")))
-
+(setq exec-path (append exec-path '("/home/roger/.cabal/bin" "/home/roger/bin")))
 
 
 (ido-mode t)
