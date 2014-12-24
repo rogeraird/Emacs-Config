@@ -42,6 +42,7 @@
 (global-set-key (kbd "C-c d") 'insert-date)
 (global-set-key (kbd "C-c s") 'sort-lines)
 (global-set-key (kbd "C-c r") 'indent-region)
+(global-set-key (kbd "M-w") 'count-words)
 
 ;; Add ~/.cabal/bin to exec-path
 (setq exec-path (append exec-path '("/home/roger/.cabal/bin" "/home/roger/bin")))
