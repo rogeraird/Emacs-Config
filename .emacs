@@ -7,8 +7,10 @@
 (package-initialize)
 (color-theme-approximate-on)
 
+
 (electric-pair-mode t)
-   
+(global-linum-mode t)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -25,6 +27,7 @@
  '(flymake-warnline ((((class color)) (:underline "yellow")))))
 
 (scroll-bar-mode -1) ; No scrollbar
+(tool-bar-mode -1)
 
 ; Solarized dark for GUI
 ; cyberpunk for CLI
